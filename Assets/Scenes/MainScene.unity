@@ -2248,6 +2248,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4982958293347072143, guid: a42dd4e7dbcb9524c80a7a164a79c959, type: 3}
+      propertyPath: gravityPower
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982958293347072143, guid: a42dd4e7dbcb9524c80a7a164a79c959, type: 3}
+      propertyPath: mouseSensivity
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
         moveDirection = RotateMovementToCameraView(moveDirection);
 
         bool isMoving = moveDirection != Vector2.zero;
-        _armatureAnimator.SetBool("Walking", isMoving);
         _armatureAnimator.SetFloat("WalkBland", _blendingDuration);
         _armatureAnimator.SetFloat("Standing", _standingDuration);
         if (isMoving)
