@@ -707,9 +707,9 @@ MonoBehaviour:
   speed: 6
   jumpStrength: 10
   jumpRest: 0.01
-  mouseSensivity: 36
+  mouseSensivity: 0.1
   rotationSpeed: 8
-  gravityPower: 0.4
+  gravityPower: 20
   cameraRoot: {fileID: 6704527021138670878}
   armature: {fileID: 7985183385510536930}
   move: {fileID: -8461547591546734795, guid: 04d6179389109c84ebb90a8e40eb8adf, type: 3}
