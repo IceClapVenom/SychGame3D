@@ -3,9 +3,6 @@ using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetStatic() { }
-
     public static void ReloadScene() 
     {
         Debug.Log("@Reload scene!");

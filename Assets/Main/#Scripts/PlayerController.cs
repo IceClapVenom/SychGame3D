@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController _character;
     private float _displayRatio;
 
+    //public int frameRate = 60;
+
 
 
 
@@ -54,12 +56,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Application.targetFrameRate = frameRate;
         Vector2 moveDirection = move.action.ReadValue<Vector2>();
         moveDirection = RotateMovementToCameraView(moveDirection);
 
         bool isMoving = moveDirection != Vector2.zero;
         _armatureAnimator.SetBool("Walking", isMoving);
         _armatureAnimator.SetFloat("WalkBland", _blendingDuration);
+        _armatureAnimator.SetFloat("Standing", _standingDuration);
         if (isMoving)
         {
             _targetRotation = moveDirection;
@@ -98,7 +102,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        moveSpeed.y -= Mathf.Pow(Time.deltaTime, gravityPower);
+        moveSpeed.y -= Time.deltaTime * gravityPower;
 
 
         _character.Move(moveSpeed * Time.deltaTime);
@@ -117,7 +121,7 @@ public class PlayerController : MonoBehaviour
         if (Mouse.current.rightButton.isPressed)
         {
             Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-            Vector2 mouseMovement = mouseDelta * mouseSensivity * Time.deltaTime;
+            Vector2 mouseMovement = mouseDelta * mouseSensivity;
 
             Vector3 rotation = cameraRoot.transform.rotation.eulerAngles;
 
@@ -125,7 +129,6 @@ public class PlayerController : MonoBehaviour
 
             rotation.y = rotation.y + mouseMovement.x;
 
-            Debug.Log(rotation.x);
             cameraRoot.transform.rotation = Quaternion.Euler(rotation);
         }
     }
